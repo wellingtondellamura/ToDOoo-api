@@ -108,7 +108,7 @@ fi
 if [ -e "$DEPLOYMENT_TARGET/composer.json" ]; then
   echo Running composer install
   cd "$DEPLOYMENT_TARGET"
-  wget -c https://getcomposer.org/composer.phar
+
   eval php composer.phar install
   exitWithMessageOnError "composer failed"
   cd - > /dev/null
