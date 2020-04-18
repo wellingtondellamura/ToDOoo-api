@@ -1,6 +1,6 @@
 <?php
 
-function pf($str) { echo $str.'\n';}
+function pf($str) { echo "$str\n";}
 
 pf("APP_NAME=\"ToDOoo API\"");
 pf("APP_ENV=production");
