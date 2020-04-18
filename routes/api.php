@@ -14,12 +14,12 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::delete('category/{id}','CategoryController@destroy', 'category.delete');
 
 
-    Route::post('/task', 'TaskController@store');
-    Route::get('/task/{id}', 'TaskController@show');
-    Route::get('/task', 'TaskController@index');
-    Route::put('/task/{id}', 'TaskController@update');
-    Route::put('/task/done/{id}', 'TaskController@done');
-    Route::delete('/task/{id}', 'TaskController@destroy');
+    Route::post('task', 'TaskController@store');
+    Route::get('task/{id}', 'TaskController@show');
+    Route::get('task', 'TaskController@index');
+    Route::put('task/{id}', 'TaskController@update');
+    Route::put('task/done/{id}', 'TaskController@done');
+    Route::delete('task/{id}', 'TaskController@destroy');
 
 });
 

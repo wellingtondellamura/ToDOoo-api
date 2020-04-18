@@ -71,10 +71,10 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">ToDOoo APP</a>
-                    <a href="https://blog.laravel.com">Author</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://wellingtondellamura.github.io/todooo-api/docs">Docs</a>
+                    <a href="https://github.com/wellingtondellamura/todooo-app">ToDOoo APP</a>
+                    <a href="https://github.com/wellingtondellamura/">Author</a>
+                    <a href="https://github.com/wellingtondellamura/todooo-api">GitHub</a>
                 </div>
             </div>
         </div>
