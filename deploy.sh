@@ -108,9 +108,11 @@ fi
 if [ -e "$DEPLOYMENT_TARGET/composer.json" ]; then
   echo Running composer install
   cd "$DEPLOYMENT_TARGET"
-
   eval php composer.phar install
   exitWithMessageOnError "composer failed"
+  #cp .env.production .env
+  php create_env.php > .env
+  php artisan key:generate
   cd - > /dev/null
 fi
 
