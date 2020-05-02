@@ -111,17 +111,22 @@ if [ -e "$DEPLOYMENT_TARGET/composer.json" ]; then
   cd "$DEPLOYMENT_TARGET"
   eval php composer.phar install
   exitWithMessageOnError "composer failed"
-  echo Configuring the app
+  echo "Configuring the APP"
+  echo "-Generate Key"
   php artisan key:generate
+  echo "-Set DB"
   php artisan env:set DB_HOST=$db_host
   php artisan env:set DB_DATABASE=$db_name
   php artisan env:set DB_USERNAME=$db_user
   php artisan env:set DB_PASSWORD=$db_password
+  echo "-Applying Migrations"
   php artisan migrate
+  echo "-Setup passport"
   php artisan passport:install
+  echo "-Setup Environment"
   php artisan env:set APP_ENV=production
   php artisan env:set APP_DEBUG=true
-
+  echo "Done."
 
   cd - > /dev/null
 fi
