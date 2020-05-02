@@ -110,9 +110,18 @@ if [ -e "$DEPLOYMENT_TARGET/composer.json" ]; then
   cd "$DEPLOYMENT_TARGET"
   eval php composer.phar install
   exitWithMessageOnError "composer failed"
-  #cp .env.production .env
-  php create_env.php > .env
+  cp .env.production .env
   php artisan key:generate
+  php artisan env:set DB_HOST=$db_host
+  php artisan env:set DB_DATABASE=$db_name
+  php artisan env:set DB_USERNAME=$db_user
+  php artisan env:set DB_PASSWORD=$db_password
+  php artisan migrate
+  php artisan passport:install
+  php artisan env:set APP_ENV=production
+  php artisan env:set APP_DEBUG=true
+
+
   cd - > /dev/null
 fi
 
