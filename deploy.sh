@@ -106,11 +106,12 @@ fi
 
 # 2. Install Composer modules
 if [ -e "$DEPLOYMENT_TARGET/composer.json" ]; then
+  cp .env.production .env
   echo Running composer install
   cd "$DEPLOYMENT_TARGET"
   eval php composer.phar install
   exitWithMessageOnError "composer failed"
-  cp .env.production .env
+  echo Configuring the app
   php artisan key:generate
   php artisan env:set DB_HOST=$db_host
   php artisan env:set DB_DATABASE=$db_name
