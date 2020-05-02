@@ -115,10 +115,10 @@ if [ -e "$DEPLOYMENT_TARGET/composer.json" ]; then
   echo "-Generate Key"
   php artisan key:generate
   echo "-Set DB"
-  php artisan env:set DB_HOST=$db_host
-  php artisan env:set DB_DATABASE=$db_name
-  php artisan env:set DB_USERNAME=$db_user
-  php artisan env:set DB_PASSWORD=$db_password
+  echo "DB_HOST=$db_host">.env
+  echo "DB_DATABASE=$db_name">.env
+  echo "DB_USERNAME=$db_user">.env
+  echo "DB_PASSWORD=$db_password">.env
   echo "-Applying Migrations"
   php artisan migrate
   echo "-Setup passport"
