@@ -1,0 +1,625 @@
+{
+	"info": {
+		"_postman_id": "7aaeccdc-bab0-4ba3-96e2-df09b4f5bce5",
+		"name": "ToDOoo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "create password reset",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\" : \"della.mura@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "{{server}}/api/password-reset/create",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"password-reset",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\" : \"Wellington Della Mura\",\n  \"email\" : \"della.mura@gmail.com\",\n  \"password\" : \"5678\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/register",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\" : \"della.mura@gmail.com\",\n  \"password\" : \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/login",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Novo Nome\",\n\t\"email\": \"della.mura@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "{{server}}/api/update",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjc0ZTMxZjAyNWY5YjE4ODljZWYyZjJhYzdhNTgwZDFjYTAwMTIyYjhjY2VkOGJiNzE1OGE4ZTFkMzFiNzU0ZmJiYmRmODdmYjAxNjNiMDMiLCJpYXQiOjE1NzQwMTg1NDMsIm5iZiI6MTU3NDAxODU0MywiZXhwIjoxNjA1NjQwOTQzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.olYTUML36rCGafyMSmWcDfE5xXscg-2HwmlAB5VV_Qfcrku5MaRFhAQvJjYxCd-VFgYUC7HQpDyxFJNAn_TAdvFTDZZ3Yw0PjDUG0kotZaxPwh8lXcraqjGqej9CPBV-zl48ppJrD-KgatqG7XxA-wox3JqqFOKkXE3N5bIp1CPrdVCkwsL2KGSv7ugQpIQsBARBu4Q4nxrkfW4zhrN-4ZAXIvRXrqSQiTy38t0DkHvjljoaYNit7j0kCozVOhmVRgNXHrCNxK_9_N_OrouX5YHEePF6g7blO3BDC6HtPdxtHX2WsGr50VwdhsbCHurZn3u7M1zfTvwXPmW7Q_r6WTNb5zUnq9R8eqkz3BZfC4Fn4swEjDtGZ-kHcg-Iv-AnaeTKLvio59YQpivBxCe6IhXibc3b7wvjqdkT8oZgG131Vm6TWCylNopjJ1uZgJGsZrYNrYm_lY0JNfAb3N_tB4xbJY0NawxscFjwisQw16ZOKNJnqlwzzdkz6QVRMiHsSZnueM0x-FplkgmLMFoLRyCmQuGQt6BB36msb87fjpZf0FZI50WIkCwT6wR1z4q0E-_Jhe3cABH_6SUlQuqEQy2g1kc4XAv2AEDOPt5_edjhDih2_0oIC9yxhQQKVlDc-tFmD13HacjBFJUEqpyvgFbRTr8vBxSfRbbBmmNRlTk",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Novo Nome\",\n\t\"email\": \"della.mura@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "{{server}}/api/logout",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "create a new category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Importante\",\n\t\"icon\" : \"icon1\",\n\t\"color\" : \"#ff0000\"\n\t\n}"
+						},
+						"url": {
+							"raw": "{{server}}/api/category",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all categories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/api/category",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/api/category/2",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"category",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove one category",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/api/category/3",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"category",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update one category",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Importante 2\",\n\t\"icon\" : \"icon1\",\n\t\"color\" : \"#ff0000\"\n\t\n}"
+						},
+						"url": {
+							"raw": "{{server}}/api/category/1",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "create a new task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Elaborar prova 2 de Programação 3",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Elaborar uma prova bem difícil pois todos adora desafios",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/task",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update a new task",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "",
+								"name": "Content-Type",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"foo\",\n\t\"category_id\" : \"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/task/3",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"task",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mark a task as done",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{server}}/api/task/done/3",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"task",
+								"done",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one task",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/api/task/3",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"task",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all tasks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/api/task/",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"task",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove one task",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/api/task/2",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"task",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "accessToken",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjZhYTRmNWRiY2U1NjExYzIxM2VlZjI1ZDEyNmI4YTk5Y2MxMzQ3YzJlYTc1YzIzZmQwZjM5NTYxNDAwNjQ4OWFlNGYyNDE1YWVjOWU2M2UiLCJpYXQiOjE1NzQyODAyMTAsIm5iZiI6MTU3NDI4MDIxMCwiZXhwIjoxNjA1OTAyNjEwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.dzrJTFoHPYum2UVg5GGl_fDSmx_RB-0_WN14_NRO37TC66zzClAO5doaUNEuyMLoT8S3WEaxPVNWtuwxNbL5_4dPFN5S-PHCpr-8Yop8Nl4lJv6DXo1iMu5TFG5WiTq77WyfkhXZA1I3cno4ph_-m7iJg7A4xzmu5m3naPvG71VhVguzXHxoLhZZf0G9loiak-XGfTVyQG_BQYqa-LbUsVQDZ4z4oFpBqHaE4YgwNC1BaOlTmX6EdRwxuXFRN-BNYl8nRbtqBkMlIK6oz7dj3PWFwXrukfCvro15tvrIyLU15KkFZKlu4iCbxOV-xQ3uiej_9ZBZyArEPUrew8eDRd2N9pErvqXo3siTYHUea3KujGPeNYegvSa7cGqTbciFfVnQbgR_9b1hh-mjeI8lITCCXBfGodAfc1Mu9z36ubOBTIjhCckxBs4Sv72K-h70iENkfTsyeVAIed2L_ZPATmZb3Xgn4CP8Zw38IxhTe_sU4WtIH4-B4q5WnCxD7SHa_mqiSKEtPY1rfpg81on4UNo40Bjl5kBIZS5Fp0YLpycXt25GQaatxd_7NKH8pCIzLLRDB5vCgry5tBri7hSd1ro48xVp6FFSnXMgbu__Je3HaewSoHrZYZUdGg6bHxATKDJ_v2ab9vJg-kP1Vy8ogrRYpusYoeU5q2Vfy8s078Y",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "1bf53f5f-4601-41ac-a4ae-141a635013bd",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6fb45da0-1f64-4609-9205-9fa63e6d26e2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "96b36569-88e2-46c6-afe0-7687ebaa8de5",
+			"key": "server",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

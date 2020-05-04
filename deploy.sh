@@ -120,12 +120,14 @@ if [ -e "$DEPLOYMENT_TARGET/composer.json" ]; then
   echo "DB_USERNAME=$db_user">>.env
   echo "DB_PASSWORD=$db_password">>.env
   echo "-Applying Migrations"
-  php artisan migrate --force -n -vvv
+  #php artisan migrate --force -n -vvv
   echo "-Setup passport"
-  php artisan passport:install
+  #php artisan passport:install
   echo "-Setup Environment"
   php artisan env:set APP_ENV=production
   php artisan env:set APP_DEBUG=true
+  php artisan telescope:install
+  php artisan telescope:publish
   echo "Done."
 
   cd - > /dev/null
